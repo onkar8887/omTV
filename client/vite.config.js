@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  envPrefix: ['VITE_', 'GOOGLE_'],
   server: {
     headers: {
       'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',

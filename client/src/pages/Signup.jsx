@@ -96,7 +96,7 @@ export default function Signup() {
         </div>
 
         <div className="flex justify-center">
-          {import.meta.env.VITE_GOOGLE_CLIENT_ID && import.meta.env.VITE_GOOGLE_CLIENT_ID !== 'your_google_client_id' ? (
+          {import.meta.env.GOOGLE_CLIENT_ID && import.meta.env.GOOGLE_CLIENT_ID !== 'your_google_client_id' ? (
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
               onError={() => {
