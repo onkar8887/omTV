@@ -7,8 +7,8 @@ const connectDB = async () => {
     
     // Automatically use memory server if local URI is used but MongoDB isn't running,
     // or just use it directly for testing/development easily.
-    if (mongoUri.includes('127.0.0.1') || mongoUri.includes('localhost')) {
-      console.log('Starting in-memory MongoDB for development...');
+    if (!mongoUri || mongoUri.includes('127.0.0.1') || mongoUri.includes('localhost')) {
+      console.log('Starting in-memory MongoDB for development/fallback...');
       const mongoServer = await MongoMemoryServer.create();
       mongoUri = mongoServer.getUri();
     }
